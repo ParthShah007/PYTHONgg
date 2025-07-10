@@ -5,17 +5,15 @@ d = dict()
 def file_create():
     existin_file()
     file_name = input("Enter the file name: ")
-    p = pathlib.Path(file_name)
+    p = pathlib.Path('python notes') / file_name
     try:
         if not p.exists():
             with open (p , 'w') as f:
                 data = input("Enter the data: ")
                 f.write(data)
             print("**FILE CREATED SUCCESSFULLY**")
-            f.close()
         else:
             print("File already exists")
-            file_create() 
     except Exception as er:
         print(f"Exception occured: {er}")
 
@@ -27,10 +25,8 @@ def file_read():
         with open (p, 'r') as f:
             data = f.read()
             print(data)
-            f.close()
     else:
         print("File does not exist")
-        file_read()
 
 def file_update():
     existin_file()
@@ -44,25 +40,22 @@ def file_update():
         match response:
             case 1:
                 new_name = input("Enter the new name of your file: ")
-                p.rename(new_name)
+                p.rename(p.parent / new_name)
                 print("**FILE RENAMED SUCCESSFULLY**")
             case 2:
                 with open (p, 'w') as f:
                     data = input("Enter the data: ")
                     f.write(data)
                     print("**FILE UPDATED SUCCESSFULLY**")
-                    f.close()
             case 3:
                 with open (p, 'a') as f:
                     data = input("Enter the data: ")
                     f.write(data)
-                    print("**Changes Saved**")3
-                    f.close()
+                    print("**Changes Saved**")
             case _:
                 print("Invalid choice.")
     else:
         print("File does not exist")
-        file_update()
 
 def file_delete():
     existin_file()
@@ -73,10 +66,10 @@ def file_delete():
         print("**FILE DELETED SUCCESSFULLY**")
     else:
         print("File does not exist")
-        file_delete()
 
 def existin_file():
     path = pathlib.Path('python notes')
+    path.mkdir(exist_ok=True)  # Ensure the folder exists
     items = list(path.rglob('*')) # List of the files in the folder
     for i, item in enumerate(items):
         print(f"{i+1} : {item}")
