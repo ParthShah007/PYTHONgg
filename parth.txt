@@ -1,0 +1,7 @@
+
+
+with open("parth.txt","r") as a:
+    print(a.read())
+    
+with open("parth.txt","a") as a:
+    a.write("Hey there wanna get a drink before we go")
