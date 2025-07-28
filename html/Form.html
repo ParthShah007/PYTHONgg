@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title> <!-- Added a title -->
+    <link rel="icon" type="image/png" href="py.png"> <!-- Fixed "images/png" to "image/png" -->
+</head>
+<body>
+    <form>
+        <label for="username">Username: </label>
+        <input type="text" id="username" placeholder="Type here" minlength="6" maxlength="15" required>
+        <br>
+        <label for="password">Password: </label>
+        <input type="password" id="password" minlength="6" maxlength="15" required> <!-- Changed input type to 'password' -->
+ 
+        <br>
+        <label for="email">Email: </label>
+        <input type="email" id="email" placeholder="sage@gmail.com" required>
+        <br>
+        <label for="phone">Phone No.</label>
+        <input type="tel" id="phone" name="phone" placeholder="+91-XXXXXXXXXX" pattern="[0-9]{10}" required>
+        <br>
+        <label for="Bday">Birth Date: </label>
+        <input type="date" id="Bday"  required>
+        <br>
+        <label for="Gender"> Gender:</label>
+        <label for="male">Male </label>
+        <input type="radio" id="male" title="Gender" value="Male">
+        <label for="female">Female </label>
+        <input type="radio" id="female" title="Gender" value="Female">
+        <br>
+        <label for="Field">Field: </label>
+        <select id="Field">
+            <option value="Science">Science</option>
+            <option value="Commerce">Commerce</option>
+            <option value="Arts">Arts</option>
+        </select>
+        <br>
+        <label for="Graduate">Graduate:</label>
+        <input type="checkbox" id="Graduate">
+        <br>
+        <label for="Hobbies">Hobbies:</label>
+        <textarea id="Hobbies" rows="3" cols="25"></textarea>
+        <br>
+        <label for="Identity Proof">Identity Proof:</label>
+        <input id="Identity Proof" type = "file" accept="image/png, image/jpg">
+        <br>
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit"> <!-- Properly closed tag and added value -->
+        
+    </form>
+</body>
+</html>
