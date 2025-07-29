@@ -1,0 +1,17 @@
+
+body{
+    background-color: black;
+}
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:	rgb(152, 251, 152);
+    text-shadow: 3px 3px 15px rgb(177, 75, 177);
+}
+p{
+    font-size: 50px;
+    color:rgb(100, 149, 237);
+    text-shadow: 3px 3px 10px rgb(87, 192, 198);
+}
+#p1{
+    color:rgb(100, 149, 237);
+}
